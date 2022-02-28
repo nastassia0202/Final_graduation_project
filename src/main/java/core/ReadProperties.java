@@ -20,24 +20,39 @@ public class ReadProperties {
         return properties.getProperty("url");
     }
 
-    public static String getBrowserName() {
-        return properties.getProperty("browser");
+    public static String getProjectAnnouncement() {
+        return properties.getProperty("ProjectAnnouncement");
     }
 
-    public static String getUsername() {
+    public static String getBrowserName() {
+        return properties.getProperty("browserType");
+    }
+
+    public static String getProjectName() {
+        return properties.getProperty("ProjectName");
+    }
+
+    public static String getEmail() {
         return properties.getProperty("username");
     }
 
     public static String getPassword() {
         return properties.getProperty("password");
     }
+    public static String getProjectType() {
+        return properties.getProperty("ProjectType");
+    }
 
     public static boolean isHeadless() {
         return properties.getProperty("headless").equalsIgnoreCase("true");
     }
 
+    public static boolean showAnnouncement() {
+        return properties.getProperty("showAnnouncement").equalsIgnoreCase("true");
+    }
+
     public static int getTimeOut() {
         return Integer.parseInt(properties.getProperty("timeout"));
     }
-}
 
+}
