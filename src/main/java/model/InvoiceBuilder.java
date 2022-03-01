@@ -8,8 +8,8 @@ import lombok.Data;
 public class InvoiceBuilder {
     private int id;
     private String serviceOption;
-    private int accountNumber;
-    private int amount;
+    private String accountNumber;
+    private String amount;
     private String payment_purpose;
     private boolean isActive;
 }

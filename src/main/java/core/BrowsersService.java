@@ -2,6 +2,7 @@ package core;
 
 import com.codeborne.selenide.Configuration;
 import static com.codeborne.selenide.AssertionMode.SOFT;
+import static constant.Urls.BASE_URL;
 
 public class BrowsersService {
 
@@ -13,7 +14,7 @@ public class BrowsersService {
         switch (browserName.toLowerCase()) {
             case "chrome":
                 org.apache.log4j.BasicConfigurator.configure();
-                Configuration.baseUrl = ReadProperties.getUrl();
+                Configuration.baseUrl = BASE_URL;
                 Configuration.browser = "chrome";
                 Configuration.startMaximized = true;
                 Configuration.fastSetValue = true;
@@ -24,7 +25,7 @@ public class BrowsersService {
 
             case "firefox":
                 org.apache.log4j.BasicConfigurator.configure();
-                Configuration.baseUrl = ReadProperties.getUrl();
+                Configuration.baseUrl = BASE_URL;
                 Configuration.browser = "firefox";
                 Configuration.startMaximized = true;
                 Configuration.fastSetValue = true;

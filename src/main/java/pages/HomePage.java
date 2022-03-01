@@ -1,10 +1,14 @@
 package pages;
 
-import bars.NavigationBar;
+
+import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends NavigationBar {
+import static com.codeborne.selenide.Selenide.open;
+
+
+public class HomePage extends BasePage {
 
     @FindBy(className = "page-content-wrapper container")
     private SelenideElement PAGE_OPENED_IDENTIFIER;
@@ -24,5 +28,35 @@ public class HomePage extends NavigationBar {
     private SelenideElement invoiceActSection;
     @FindBy(xpath = "//div[.='Сотрудники']")
     private SelenideElement settingsEmployeesSection;
+
+    public HomePage() {
+        open();
+        waitVisibility(PAGE_OPENED_IDENTIFIER);
+    }
+
+    public void clickForInvoices(){
+        invoicesSection.click();
+    }
+    public void clickForPayments(){
+        paymentsSection.click();
+    }
+    public void clickForServices(){
+        servicesSection.click();
+    }
+    public void clickForSettingsPersonal(){
+        settingsPersonalSection.click();
+    }
+    public void clickForInvoicesAdd(){
+        invoicesAddSection.click();
+    }
+    public void clickForPayers(){
+        payersSection.click();
+    }
+    public void clickForInvoiceAct(){
+        invoiceActSection.click();
+    }
+    public void clickForSettingsEmployees(){
+        settingsEmployeesSection.click();
+    }
 
 }
