@@ -1,7 +1,6 @@
 package tests.database;
 
 import baseEntities.BaseDBTest;
-import dbEntries.UsersTable;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
