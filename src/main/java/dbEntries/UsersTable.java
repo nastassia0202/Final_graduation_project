@@ -17,7 +17,7 @@ public class UsersTable {
 
 
     public void createTable() {
-        logger.info("Создаем таблицу customers");
+        logger.info("Создаем таблицу users");
 
         String createTableSQL = "CREATE TABLE users (" +
                 "id SERIAL PRIMARY KEY, " +
@@ -50,7 +50,7 @@ public class UsersTable {
     }
 
     public void addUser(String login, String password) {
-        logger.info("Добавляем запист в таблицу users");
+        logger.info("Добавляем запись в таблицу users");
 
         String insertTableSQL = "INSERT INTO public.users(" +
                 "login, password)" +

@@ -26,6 +26,11 @@
             <artifactId>webdrivermanager</artifactId>
             <version>4.2.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>5.14.0</version>
+        </dependency>
 
         <dependency>
             <groupId>org.testng</groupId>
@@ -68,6 +73,11 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
             <version>6.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.35</version>
         </dependency>
     </dependencies>
 
