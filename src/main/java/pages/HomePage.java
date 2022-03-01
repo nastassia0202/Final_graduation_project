@@ -9,20 +9,20 @@ public class HomePage extends NavigationBar {
     @FindBy(className = "page-content-wrapper container")
     private SelenideElement PAGE_OPENED_IDENTIFIER;
     @FindBy(xpath = "//*[.='Счета']")
-    public SelenideElement invoicesSection;
+    private SelenideElement invoicesSection;
     @FindBy(xpath = "//div[.='Платежи']")
-    public SelenideElement paymentsSection;
+    private SelenideElement paymentsSection;
     @FindBy(xpath = "//div[.='Услуги']")
-    public SelenideElement servicesSection;
+    private SelenideElement servicesSection;
     @FindBy(xpath = "//*[.='Личные']")
-    public SelenideElement settingsPersonalSection;
+    private SelenideElement settingsPersonalSection;
     @FindBy(xpath = "//*[.='Выставить']")
-    public SelenideElement invoicesAddSection;
+    private SelenideElement invoicesAddSection;
     @FindBy(xpath = "//div[.='Плательщики']")
-    public SelenideElement payersSection;
+    private SelenideElement payersSection;
     @FindBy(xpath = "//*[.='Оплата']")
-    public SelenideElement invoiceActSection;
+    private SelenideElement invoiceActSection;
     @FindBy(xpath = "//div[.='Сотрудники']")
-    public SelenideElement settingsEmployeesSection;
+    private SelenideElement settingsEmployeesSection;
 
 }

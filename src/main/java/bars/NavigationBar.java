@@ -7,16 +7,12 @@ import org.openqa.selenium.support.FindBy;
 public class NavigationBar {
 
     @FindBy(className = "current")
-    @CacheLookup
-    public SelenideElement mainButton;
+    private SelenideElement mainButton;
     @FindBy(xpath = "//a[text()='Платежи']")
-    @CacheLookup
-    public SelenideElement paymentsButton;
+    private SelenideElement paymentsButton;
     @FindBy(xpath = "//div/a[@href='/settings/personal']")
-    @CacheLookup
-    public SelenideElement personalSettingsLink;
+    private SelenideElement personalSettingsLink;
     @FindBy (linkText = "/home/logout")
-    @CacheLookup
     private SelenideElement logoutLink;
 
     

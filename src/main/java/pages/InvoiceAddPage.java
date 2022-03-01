@@ -9,16 +9,16 @@ public class InvoiceAddPage extends NavigationBar {
     @FindBy(xpath = "//h1[.='Выставить новый счет']")
     private SelenideElement PAGE_OPENED_IDENTIFIER;
     @FindBy(xpath = "//div[@class='col-md-5']//span[@class='k-input']")
-    public SelenideElement servicesDropDown;
+    private SelenideElement servicesDropDown;
     @FindBy(xpath = "//*[.='ЕРИП: Прочие услуги']")
-    public SelenideElement otherServicesChoice;
+    private SelenideElement otherServicesChoice;
     @FindBy(id = "AccountNumber")
-    public SelenideElement accountNumberInput;
+    private SelenideElement accountNumberInput;
     @FindBy(className = "k-formatted-value k-input")
-    public SelenideElement totalPaymentInput;
+    private SelenideElement totalPaymentInput;
     @FindBy(id = "PaymentPurpose")
-    public SelenideElement paymentPurposeInput;
+    private SelenideElement paymentPurposeInput;
     @FindBy(className = "button-orange")
-    public SelenideElement invoicesAddButton;
+    private SelenideElement invoicesAddButton;
 
 }
