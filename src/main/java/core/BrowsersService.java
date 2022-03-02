@@ -16,10 +16,9 @@ public class BrowsersService {
                 org.apache.log4j.BasicConfigurator.configure();
                 Configuration.baseUrl = BASE_URL;
                 Configuration.browser = "chrome";
-                Configuration.startMaximized = true;
                 Configuration.fastSetValue = true;
                 Configuration.timeout = 8000;
-                Configuration.headless = true;
+                Configuration.headless = false;
                 Configuration.assertionMode = SOFT;
                 break;
 
@@ -27,10 +26,9 @@ public class BrowsersService {
                 org.apache.log4j.BasicConfigurator.configure();
                 Configuration.baseUrl = BASE_URL;
                 Configuration.browser = "firefox";
-                Configuration.startMaximized = true;
                 Configuration.fastSetValue = true;
                 Configuration.timeout = 8000;
-                Configuration.headless = true;
+                Configuration.headless = false;
                 Configuration.assertionMode = SOFT;
                 break;
 

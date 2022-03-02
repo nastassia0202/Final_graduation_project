@@ -3,7 +3,7 @@ package pages;
 
 import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
-import model.InvoiceBuilder;
+import model.Invoice;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -30,9 +30,8 @@ public class InvoiceAddPage extends BasePage {
         open(ADD_INVOICES_PAGE);
         waitVisibility(PAGE_OPENED_IDENTIFIER);
     }
-
-    public InvoiceBuilder getInvoice(){
-        return InvoiceBuilder.builder()
+    public Invoice getInvoice(){
+        return Invoice.builder()
                 .serviceOption("database")
                 .accountNumber("database")
                 .amount("database")
@@ -41,12 +40,12 @@ public class InvoiceAddPage extends BasePage {
                 .build();
     }
 
-    public void addInvoice(InvoiceBuilder invoiceBuilder){
+    public void addInvoice(Invoice invoice){
         servicesDropDown.click();
         otherServicesChoice.click();
-        accountNumberInput.sendKeys(invoiceBuilder.getAccountNumber());
-        totalPaymentInput.sendKeys(invoiceBuilder.getAmount());
-        paymentPurposeInput.sendKeys(invoiceBuilder.getPayment_purpose());
+        accountNumberInput.sendKeys(invoice.getAccountNumber());
+        totalPaymentInput.sendKeys(invoice.getAmount());
+        paymentPurposeInput.sendKeys(invoice.getPayment_purpose());
         invoicesAddButton.click();
     }
 

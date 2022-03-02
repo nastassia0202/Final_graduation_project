@@ -4,7 +4,7 @@ package pages;
 
 import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
-import model.UserBuilder;
+import model.User;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -26,20 +26,20 @@ public class LoginPage extends BasePage {
     private SelenideElement demoLoginLink;
 
     public LoginPage() {
-        open(BASE_URL);
+        open("/");
         waitVisibility(PAGE_OPENED_IDENTIFIER);
     }
 
-    public UserBuilder getUser(){
-        return UserBuilder.builder()
-                .login("database")
-                .password("database")
+    public User getUser(){
+        return User.builder()
+                .login("demo")
+                .password("demo")
                 .build();
     }
 
-    public void loginWithUser(UserBuilder userBuilder) {
-        emailField.sendKeys(userBuilder.getLogin());
-        passwordField.sendKeys(userBuilder.getPassword());
+    public void loginWithUser(User user) {
+        emailField.sendKeys(user.getLogin());
+        passwordField.sendKeys(user.getPassword());
         reCaptchaCheckbox.click();
         loginButton.click();
     }
