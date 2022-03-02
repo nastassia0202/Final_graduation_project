@@ -30,7 +30,7 @@ public class HomePage extends BasePage {
     private SelenideElement settingsEmployeesSection;
 
     public HomePage() {
-        open();
+        open("/");
         waitVisibility(PAGE_OPENED_IDENTIFIER);
     }
 

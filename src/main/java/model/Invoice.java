@@ -13,13 +13,4 @@ public class Invoice {
     private String payment_purpose;
     private boolean isActive;
 
-    public Invoice getInvoice(){
-        return Invoice.builder()
-                .serviceOption("database")
-                .accountNumber("database")
-                .amount("database")
-                .payment_purpose("database")
-                .isActive(true)
-                .build();
-    }
 }

@@ -11,10 +11,4 @@ public class User {
     private String login;
     private String password;
 
-    public User getUser(){
-        return User.builder()
-                .login("database")
-                .password("database")
-                .build();
-    }
 }
