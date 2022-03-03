@@ -1,25 +1,38 @@
 package baseEntities;
 
-import com.codeborne.selenide.Selenide;
-import core.BrowsersService;
+import core.DriverService;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
-import utils.Listener;
+
+import org.testng.asserts.SoftAssert;
 
 
-@Listeners(Listener.class)
+
 public class BaseTest {
-protected BrowsersService browsersService;
+    protected InitPages initPages;
+    protected SoftAssert softAssert;
+    //protected Logger logger;
 
+    @BeforeClass
+    public void setUp() {
 
-@BeforeClass
-public void openPage() {
-    browsersService = new BrowsersService();
-}
+        DriverService.initDriver();
 
-@AfterClass
-public void closePage() {
-    Selenide.closeWebDriver();
-}
+        initPages = new InitPages();
+        softAssert = new SoftAssert();
+
+        //logger = LogManager.getLogger("");
+        //DOMConfigurator.configure("src/main/resources/log4j.xml");
+    }
+
+    @AfterMethod
+    public void clearCookies() {
+        DriverService.clearCookies();
+    }
+
+    @AfterClass
+    public void tearDown() {
+        DriverService.close();
+    }
 }

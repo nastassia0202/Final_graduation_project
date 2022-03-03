@@ -1,30 +1,21 @@
 package baseEntities;
 
+import com.codeborne.selenide.Selenide;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
-import org.openqa.selenium.WebDriver;
+import utils.Trim;
 
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
-
-import static com.codeborne.selenide.Selenide.switchTo;
-
+import static constant.Urls.BASE_URL;
 
 public abstract class BasePage {
-    public BasePage(){
-        Configuration.timeout = Duration.of(1, ChronoUnit.MINUTES).toMillis();
+
+    protected String pageUrl;
+
+    public BasePage(String pageUrl) {
+        this.pageUrl = pageUrl;
     }
 
-    protected void waitEnabledAndClick(SelenideElement element){
-        element.shouldBe(Condition.enabled).click();
-   }
-
-   protected SelenideElement waitVisibility(SelenideElement element){
-        return element.shouldBe(Condition.visible);
-   }
-
-
+    public void open() {
+        String url = Trim.rtrim(BASE_URL, "/") + "/" + Trim.ltrim(pageUrl, "/");
+        Selenide.open(url);
+    }
 }

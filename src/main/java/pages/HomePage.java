@@ -29,9 +29,8 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[.='Сотрудники']")
     private SelenideElement settingsEmployeesSection;
 
-    public HomePage() {
-        open("/");
-        waitVisibility(PAGE_OPENED_IDENTIFIER);
+    public HomePage(String pageUrl) {
+        super(pageUrl);
     }
 
     public void clickForInvoices(){

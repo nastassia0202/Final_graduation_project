@@ -6,8 +6,6 @@ import com.codeborne.selenide.SelenideElement;
 import model.Invoice;
 import org.openqa.selenium.support.FindBy;
 
-import static com.codeborne.selenide.Selenide.open;
-import static constant.endpoints.EndPointsUrl.ADD_INVOICES_PAGE;
 
 public class InvoiceAddPage extends BasePage {
 
@@ -26,10 +24,10 @@ public class InvoiceAddPage extends BasePage {
     @FindBy(className = "button-orange")
     private SelenideElement invoicesAddButton;
 
-    public InvoiceAddPage() {
-        open(ADD_INVOICES_PAGE);
-        waitVisibility(PAGE_OPENED_IDENTIFIER);
+    public InvoiceAddPage(String pageUrl) {
+        super(pageUrl);
     }
+
     public Invoice getInvoice(){
         return Invoice.builder()
                 .serviceOption("database")

@@ -7,9 +7,6 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
 
-import static com.codeborne.selenide.Selenide.open;
-import static constant.endpoints.EndPointsUrl.SERVICES_PAGE;
-
 public class ServicesPage extends BasePage {
 
     @FindBy(xpath = "//h1[.='Услуги']")
@@ -19,9 +16,8 @@ public class ServicesPage extends BasePage {
     @FindBy (xpath = "//input[@value='Отправить запрос']")
     private SelenideElement requestButton;
 
-    public ServicesPage() {
-        open(SERVICES_PAGE);
-        waitVisibility(PAGE_OPENED_IDENTIFIER);
+    public ServicesPage(String pageUrl) {
+        super(pageUrl);
     }
 
     public void checkPopupMessage(){
