@@ -5,29 +5,26 @@ package pages;
 import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import model.User;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-import static com.codeborne.selenide.Selenide.open;
-import static constant.Urls.BASE_URL;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage extends BasePage {
 
-    @FindBy(xpath = "//*[.='Вход в личный кабинет']")
-    private SelenideElement PAGE_OPENED_IDENTIFIER;
-    @FindBy(id = "login")
-    private SelenideElement emailField;
-    @FindBy(id = "password")
-    private SelenideElement passwordField;
-    @FindBy(xpath = "//*[@value='Войти']")
-    private SelenideElement loginButton;
-    @FindBy(id = "recaptcha-anchor")
-    private SelenideElement reCaptchaCheckbox;
-    @FindBy(xpath = "//a[.='Демо вход']")
-    private SelenideElement demoLoginLink;
+
+    private final SelenideElement emailField = $(By.id("login"));
+    private final SelenideElement passwordField = $(By.id("password"));
+    private final SelenideElement loginButton = $x("//*[@value='Войти']");
+    private final SelenideElement reCaptchaCheckbox = $(By.id("recaptcha-anchor"));
+    private final SelenideElement demoLoginLink = $x("//a[.='Демо вход']");;
 
     public LoginPage() {
         open("/");
-        waitVisibility(PAGE_OPENED_IDENTIFIER);
+        SelenideElement PAGE_OPENED_IDENTIFIER = $x("//title[.='Вход в личный кабинет']");
+        PAGE_OPENED_IDENTIFIER.should(visible);
     }
 
     public User getUser(){
@@ -38,10 +35,10 @@ public class LoginPage extends BasePage {
     }
 
     public void loginWithUser(User user) {
-        emailField.sendKeys(user.getLogin());
-        passwordField.sendKeys(user.getPassword());
-        reCaptchaCheckbox.click();
-        loginButton.click();
+        emailField.should(visible).setValue(user.getLogin());
+        passwordField.should(visible).setValue(user.getPassword());
+        reCaptchaCheckbox.should(visible).click();
+        loginButton.should(visible).click();
     }
 
     public void login() {
