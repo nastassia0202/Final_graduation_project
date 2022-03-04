@@ -1,13 +1,12 @@
 package pages;
 
 
-import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import model.Invoice;
 import org.openqa.selenium.support.FindBy;
 
 
-public class InvoiceAddPage extends BasePage {
+public class InvoiceAddPage{
 
     @FindBy(xpath = "//h1[.='Выставить новый счет']")
     private SelenideElement PAGE_OPENED_IDENTIFIER;
@@ -24,9 +23,7 @@ public class InvoiceAddPage extends BasePage {
     @FindBy(className = "button-orange")
     private SelenideElement invoicesAddButton;
 
-    public InvoiceAddPage(String pageUrl) {
-        super(pageUrl);
-    }
+
 
     public Invoice getInvoice(){
         return Invoice.builder()

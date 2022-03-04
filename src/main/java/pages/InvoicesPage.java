@@ -1,14 +1,12 @@
 package pages;
 
 
-import baseEntities.BasePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
-import static constant.endpoints.EndPointsUrl.INVOICES_PAGE;
 
-public class InvoicesPage extends BasePage {
+public class InvoicesPage {
 
     @FindBy(xpath = "//h1[.='Счета']")
     private SelenideElement PAGE_OPENED_IDENTIFIER;
@@ -19,9 +17,7 @@ public class InvoicesPage extends BasePage {
     @FindBy(xpath = "//td[.='"+"database"+",00 BYN ']")
     private SelenideElement totalPayment;
 
-    public InvoicesPage(String pageUrl) {
-        super(pageUrl);
-    }
+
 
     public void checkSuccessInvoice(){
         successMessage.shouldBe(Condition.visible);

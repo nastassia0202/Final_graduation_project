@@ -24,35 +24,16 @@ public class DriverService {
 
     public static void initDriver() {
 
-        // Get settings from command line
-
-        TestConfig.initConfig();
-
         // Set settings for selenide browser
-
+        org.apache.log4j.BasicConfigurator.configure();
+        Configuration.baseUrl = BASE_URL;
+        Configuration.browser = Browsers.CHROME;
+        Configuration.headless = false;
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.screenshots = false;
-
-        if(TestConfig.isHeadless()) {
-            Configuration.headless = true;
-        } else {
-            Configuration.headless = false;
-        }
-
-        switch (TestConfig.browser)
-        {
-            case "chrome":
-                Configuration.browser = Browsers.CHROME;
-                break;
-            case "firefox":
-                Configuration.browser = Browsers.FIREFOX;
-                break;
-            default:
-                Configuration.browser = Browsers.CHROME;
-                break;
-        }
+        open("/");
     }
 
     public static WebDriver currentDriver() {

@@ -1,14 +1,12 @@
 package pages;
 
 
-import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.codeborne.selenide.Selenide.open;
 
 
-public class HomePage extends BasePage {
+public class HomePage{
 
     @FindBy(className = "page-content-wrapper container")
     private SelenideElement PAGE_OPENED_IDENTIFIER;
@@ -29,9 +27,6 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[.='Сотрудники']")
     private SelenideElement settingsEmployeesSection;
 
-    public HomePage(String pageUrl) {
-        super(pageUrl);
-    }
 
     public void clickForInvoices(){
         invoicesSection.click();

@@ -2,7 +2,6 @@ package pages;
 
 
 
-import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import model.User;
 import org.openqa.selenium.By;
@@ -10,7 +9,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LoginPage extends BasePage {
+public class LoginPage {
 
 
     private final SelenideElement emailField = $(By.id("login"));
@@ -19,9 +18,7 @@ public class LoginPage extends BasePage {
     private final SelenideElement reCaptchaCheckbox = $(By.id("recaptcha-anchor"));
     private final SelenideElement demoLoginLink = $x("//a[.='Демо вход']");;
 
-    public LoginPage(String pageUrl) {
-        super(pageUrl);
-    }
+
 
     public User getUser(){
         return User.builder()
@@ -30,8 +27,7 @@ public class LoginPage extends BasePage {
                 .build();
     }
 
-    public void loginWithUser() {
-        User user = this.getUser();
+    public void loginWithUser(User user) {
         emailField.should(visible).setValue(user.getLogin());
         passwordField.should(visible).setValue(user.getPassword());
         reCaptchaCheckbox.should(visible).click();
