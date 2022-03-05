@@ -3,17 +3,19 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 
 public class ServicesPage {
 
-    @FindBy(xpath = "//h1[.='Услуги']")
-    private SelenideElement PAGE_OPENED_IDENTIFIER;
-    @FindBy(id = "sendText")
-    private SelenideElement requestSuccessMessage;
-    @FindBy (xpath = "//input[@value='Отправить запрос']")
-    private SelenideElement requestButton;
+
+    private final SelenideElement PAGE_OPENED_IDENTIFIER = $x("//h1[.='Услуги']");
+    private final SelenideElement requestSuccessMessage = $(By.id("sendText"));
+    private final SelenideElement requestButton = $x("//input[@value='Отправить запрос']");
 
 
 

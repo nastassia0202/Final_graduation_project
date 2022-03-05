@@ -3,19 +3,20 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
+
 public class InvoicesPage {
 
-    @FindBy(xpath = "//h1[.='Счета']")
-    private SelenideElement PAGE_OPENED_IDENTIFIER;
-    @FindBy(xpath = "//*[.='Счет успешно создан!']")
-    private SelenideElement successMessage;
-    @FindBy(xpath = "//a[.='"+"database"+"']")
-    private SelenideElement numberInvoice;
-    @FindBy(xpath = "//td[.='"+"database"+",00 BYN ']")
-    private SelenideElement totalPayment;
+
+    private final SelenideElement PAGE_OPENED_IDENTIFIER = $x("//h1[.='Счета']");
+    private final SelenideElement successMessage = $x("//*[.='Счет успешно создан!']");
+    private final SelenideElement numberInvoice = $x("//a[.='"+"database"+"']");
+    private final SelenideElement totalPayment = $x("//td[.='"+"database"+",00 BYN ']");
 
 
 

@@ -2,30 +2,25 @@ package pages;
 
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 
 public class HomePage{
 
-    @FindBy(className = "page-content-wrapper container")
-    private SelenideElement PAGE_OPENED_IDENTIFIER;
-    @FindBy(xpath = "//*[.='Счета']")
-    private SelenideElement invoicesSection;
-    @FindBy(xpath = "//div[.='Платежи']")
-    private SelenideElement paymentsSection;
-    @FindBy(xpath = "//div[.='Услуги']")
-    private SelenideElement servicesSection;
-    @FindBy(xpath = "//*[.='Личные']")
-    private SelenideElement settingsPersonalSection;
-    @FindBy(xpath = "//*[.='Выставить']")
-    private SelenideElement invoicesAddSection;
-    @FindBy(xpath = "//div[.='Плательщики']")
-    private SelenideElement payersSection;
-    @FindBy(xpath = "//*[.='Оплата']")
-    private SelenideElement invoiceActSection;
-    @FindBy(xpath = "//div[.='Сотрудники']")
-    private SelenideElement settingsEmployeesSection;
+
+    private final SelenideElement PAGE_OPENED_IDENTIFIER = $(By.className("page-content-wrapper container"));
+    private final SelenideElement invoicesSection = $x("//*[.='Счета']");
+    private final SelenideElement paymentsSection = $x("//div[.='Платежи']");
+    private final SelenideElement servicesSection = $x("//div[.='Услуги']");
+    private final SelenideElement settingsPersonalSection = $x("//*[.='Личные']");
+    private final SelenideElement invoicesAddSection = $x("//*[.='Выставить']");
+    private final SelenideElement payersSection = $x("//div[.='Плательщики']");
+    private final SelenideElement invoiceActSection = $x("//*[.='Оплата']");
+    private final SelenideElement settingsEmployeesSection = $x("//div[.='Сотрудники']");
 
 
     public void clickForInvoices(){

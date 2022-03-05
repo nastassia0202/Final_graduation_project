@@ -2,19 +2,20 @@ package pages;
 
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 
 public class PersonalDataPage{
 
-    @FindBy(xpath = "//h1[.='Редактировать личные данные']")
-    private SelenideElement PAGE_OPENED_IDENTIFIER;
-    @FindBy(id = "LastName")
-    private SelenideElement lastNameInput;
-    @FindBy(id = "FirstName")
-    private SelenideElement firstNameInput;
-    @FindBy(xpath = "//*[@value='Сохранить']")
-    private SelenideElement saveButton;
+
+    private final SelenideElement PAGE_OPENED_IDENTIFIER = $x("//h1[.='Редактировать личные данные']");
+    private final SelenideElement lastNameInput = $(By.id("LastName"));
+    private final SelenideElement firstNameInput = $(By.id("FirstName"));
+    private final SelenideElement saveButton = $x("//*[@value='Сохранить']");
 
 
 
