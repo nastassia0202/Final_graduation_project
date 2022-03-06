@@ -34,6 +34,7 @@ public class DriverService {
         Configuration.holdBrowserOpen = false;
         Configuration.screenshots = false;
         open("/");
+        
     }
 
     public static WebDriver currentDriver() {

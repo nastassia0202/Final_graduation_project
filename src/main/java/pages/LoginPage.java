@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import model.User;
 import org.openqa.selenium.By;
 
+
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -15,7 +16,7 @@ public class LoginPage {
     private final SelenideElement emailField = $(By.id("login"));
     private final SelenideElement passwordField = $(By.id("password"));
     private final SelenideElement loginButton = $x("//*[@value='Войти']");
-    private final SelenideElement reCaptchaCheckbox = $(By.id("recaptcha-anchor"));
+    private final SelenideElement reCaptchaCheckbox = $(By.className("rc-anchor-center-item rc-anchor-checkbox-holder"));
     private final SelenideElement demoLoginLink = $x("//a[.='Демо вход']");;
 
 
@@ -27,11 +28,13 @@ public class LoginPage {
                 .build();
     }
 
-    public void loginWithUser(User user) {
+    public void loginWithUser(User user) throws InterruptedException {
         emailField.should(visible).setValue(user.getLogin());
         passwordField.should(visible).setValue(user.getPassword());
-        reCaptchaCheckbox.should(visible).click();
+        actions().moveByOffset(662,636).click();
+        Thread.sleep(8000);
         loginButton.should(visible).click();
+
     }
 
     public void login() {
