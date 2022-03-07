@@ -32,7 +32,7 @@ public class DriverService {
         Configuration.headless = false;
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = false;
+        Configuration.holdBrowserOpen = true;
         Configuration.screenshots = false;
         open("/");
         
