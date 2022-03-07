@@ -50,7 +50,7 @@ public class InvoicesTable {
     }
 
     public void addInvoices(String login, String password) {
-        logger.info("Добавляем запист в таблицу Invoices");
+        logger.info("Добавляем запись в таблицу Invoices");
 
         String insertTableSQL = "INSERT INTO public.invoices(" +
                 "login, password)" +
