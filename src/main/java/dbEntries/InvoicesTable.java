@@ -17,7 +17,7 @@ public class InvoicesTable {
 
 
     public void createTable() {
-        logger.info("Создаем таблицу customers");
+        logger.info("Создаем таблицу Invoices");
 
         String createTableSQL = "CREATE TABLE invoices (" +
                 "id SERIAL PRIMARY KEY, " +
