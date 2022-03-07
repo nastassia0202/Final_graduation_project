@@ -38,9 +38,6 @@ public class dbTests extends BaseDBTest {
     public void secondTest() {
         UsersTable usersTable = new UsersTable(dataBaseService);
 
-        usersTable.dropTable();
-        usersTable.createTable();
-
         usersTable.addUser("Иван", "Иванов");
         usersTable.addUser("Петр", "Петров");
         usersTable.addUser("Марина", "Стасевич");
