@@ -12,6 +12,6 @@ public class BaseDBTest {
     public void setUpConnection(){
         org.apache.log4j.BasicConfigurator.configure();
         dataBaseService = new DataBaseService();
-        dataBaseService.closeConnection();
+        //dataBaseService.closeConnection();
     }
 }
