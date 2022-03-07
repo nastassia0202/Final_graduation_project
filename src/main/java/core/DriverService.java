@@ -11,12 +11,13 @@ import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.LoginPage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import static constant.Urls.BASE_URL;
 
@@ -121,12 +122,21 @@ public class DriverService {
 
     // COOKIES
 
-    public static void addCookie(Cookie cookie) {
-        currentDriver().manage().addCookie(cookie);
+    public static void addCookie() throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("Cookies.txt"));
+        Set<Cookie> cookies = (Set<Cookie>) in.readObject();
+        for(Cookie cookie: cookies){
+            currentDriver().manage().addCookie(cookie);
+        }
+        open("/");
     }
 
-    public static Cookie getCookie(String cookieName) {
-        return currentDriver().manage().getCookieNamed(cookieName);
+    public static void getCookie() throws InterruptedException, IOException {
+        LoginPage loginPage = new LoginPage();
+        loginPage.loginWithUser(loginPage.getUser());
+        Set<Cookie> cookies = currentDriver().manage().getCookies();
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("Cookies.txt"));
+        out.writeObject(cookies);
     }
 
     public static void deleteCookie(String cookieName) {
