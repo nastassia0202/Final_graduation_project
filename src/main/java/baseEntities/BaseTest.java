@@ -16,7 +16,7 @@ public class BaseTest {
     }
 
     @BeforeClass(dependsOnMethods = "setUp")
-    public void login() throws IOException, ClassNotFoundException {
+    public void login() throws IOException, ClassNotFoundException, InterruptedException {
         addCookie();
     }
 

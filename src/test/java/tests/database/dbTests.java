@@ -1,7 +1,7 @@
 package tests.database;
 
 import baseEntities.BaseDBTest;
-import dbEntries.UsersTable;
+import dbEntries.InvoicesTable;
 import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
@@ -13,20 +13,24 @@ public class dbTests extends BaseDBTest {
 
     @Test
     public void firstTest() {
-        UsersTable usersTable = new UsersTable(dataBaseService);
+        InvoicesTable invoicesTable = new InvoicesTable(dataBaseService);
 
-        ResultSet resultSet = usersTable.getAllUsers();
+        ResultSet resultSet = invoicesTable.getInvoicesByID(1);
 
         try {
             while (resultSet.next()) {
                 String id = resultSet.getString("id");
-                String login = resultSet.getString("login");
-                String password = resultSet.getString("password");
+                String service_option = resultSet.getString("service_option");
+                String account_number = resultSet.getString("account_number");
+                String amount = resultSet.getString("amount");
+                String payment_purpose = resultSet.getString("payment_purpose");
 
 
-                logger.info("userid: " + id);
-                logger.info("login: " + login);
-                logger.info("password: " + password);
+                System.out.println("userid: " + id);
+                System.out.println("service_option: " + service_option);
+                System.out.println("account_number: " + account_number);
+                System.out.println("amount: " + amount);
+                System.out.println("payment_purpose: " + payment_purpose);
 
             }
         } catch (SQLException e) {
@@ -34,28 +38,6 @@ public class dbTests extends BaseDBTest {
         }
     }
 
-    @Test
-    public void secondTest() {
-        UsersTable usersTable = new UsersTable(dataBaseService);
-
-        usersTable.addUser("Иван", "Иванов");
-        usersTable.addUser("Петр", "Петров");
-        usersTable.addUser("Марина", "Стасевич");
-
-        ResultSet resultSet = usersTable.getAllUsers();
-        try {
-            while (resultSet.next()) {
-                String id = resultSet.getString("id");
-                String login = resultSet.getString("login");
-                String password = resultSet.getString("password");
 
 
-                logger.info("userid: " + id);
-                logger.info("login: " + login);
-                logger.info("password: " + password);
-            }
-        } catch (SQLException e) {
-            logger.error(e.toString());
-        }
-    }
 }

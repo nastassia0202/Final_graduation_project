@@ -21,8 +21,10 @@ public class InvoicesTable {
 
         String createTableSQL = "CREATE TABLE invoices (" +
                 "id SERIAL PRIMARY KEY, " +
-                "login CHARACTER VARYING(30), " +
-                "password CHARACTER VARYING(30), " +
+                "service_option CHARACTER VARYING(30), " +
+                "account_number BIGINT, " +
+                "amount INTEGER, " +
+                "payment_purpose CHARACTER VARYING(100), " +
                 ");";
         dataBaseService.executeSQL(createTableSQL);
     }
@@ -49,12 +51,12 @@ public class InvoicesTable {
         return dataBaseService.executeQuery(sql);
     }
 
-    public void addInvoices(String login, String password) {
+    public void addInvoices(String service_option, int account_number,int amount, String payment_purpose ) {
         logger.info("Добавляем запись в таблицу Invoices");
 
         String insertTableSQL = "INSERT INTO public.invoices(" +
-                "login, password)" +
-                "VALUES ('" + login + "', '" + password +");";
+                "service_option, account_number,amount,payment_purpose)" +
+                "VALUES ('" + service_option + "', '"+ account_number + "', '"+ amount + "', '" + payment_purpose +");";
 
         dataBaseService.executeSQL(insertTableSQL);
     }
