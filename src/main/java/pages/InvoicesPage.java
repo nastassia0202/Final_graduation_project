@@ -3,8 +3,6 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -26,4 +24,11 @@ public class InvoicesPage {
         Assert.assertEquals(totalPayment.getText(),"database");
     }
 
+    public SelenideElement getPAGE_OPENED_IDENTIFIER() {
+        return PAGE_OPENED_IDENTIFIER;
+    }
+
+    public SelenideElement getSuccessMessage() {
+        return successMessage;
+    }
 }

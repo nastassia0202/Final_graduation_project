@@ -28,11 +28,10 @@ public class LoginPage {
                 .build();
     }
 
-    public void loginWithUser(User user) throws InterruptedException {
+    public void loginWithUser(User user) {
         emailField.should(visible).setValue(user.getLogin());
         passwordField.should(visible).setValue(user.getPassword());
         actions().moveByOffset(662,636).click();
-        Thread.sleep(8000);
         loginButton.should(visible).click();
 
     }
@@ -42,11 +41,6 @@ public class LoginPage {
         reCaptchaCheckbox.click();
         loginButton.click();
     }
-
-    public void loginWithCookie() {
-
-    }
-
 
 
 }

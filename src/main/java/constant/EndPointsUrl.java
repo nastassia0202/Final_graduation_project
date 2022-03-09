@@ -1,4 +1,4 @@
-package constant.endpoints;
+package constant;
 
 public class EndPointsUrl {
 
@@ -10,6 +10,6 @@ public class EndPointsUrl {
     public static final String PAYERS_PAGE = "/payers";
     public static final String INVOICE_ACT_PAGE = "/invoice-act";
     public static final String EMPLOYEES_PAGE = "/employees";
-    public static final String INVOICES_IMPORT_PAGE = "/invoices/import";
+    public static final String PAYERS_IMPORT_PAGE = "/payers/import";
 
 }

@@ -2,6 +2,7 @@ package pages;
 
 
 
+import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import core.DataBaseService;
 import dbEntries.InvoicesTable;
@@ -13,12 +14,12 @@ import org.openqa.selenium.By;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static com.codeborne.selenide.Condition.visible;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 
-public class InvoiceAddPage{
+public class InvoiceAddPage extends BasePage {
     protected DataBaseService dataBaseService;
     public static Logger logger = Logger.getLogger(InvoiceAddPage.class);
     private final SelenideElement PAGE_OPENED_IDENTIFIER = $x("//h1[.='Выставить новый счет']");
@@ -33,8 +34,7 @@ public class InvoiceAddPage{
 
 
     public Invoice getInvoice() {
-
-        dataBaseService = new DataBaseService();
+        setUpConnectionDB();
         InvoicesTable invoicesTable = new InvoicesTable(dataBaseService);
         ResultSet resultSet = invoicesTable.getInvoicesByID(1);
 
@@ -52,7 +52,7 @@ public class InvoiceAddPage{
         } catch (SQLException e) {
             logger.error(e.toString());
         }
-        dataBaseService.closeConnection();
+        closeConnectionDB();
         return null;
     }
 
@@ -66,4 +66,7 @@ public class InvoiceAddPage{
         invoicesAddButton.scrollTo().click();
     }
 
+    public SelenideElement getPAGE_OPENED_IDENTIFIER() {
+        return PAGE_OPENED_IDENTIFIER;
+    }
 }

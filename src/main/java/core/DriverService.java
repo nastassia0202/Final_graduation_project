@@ -80,11 +80,6 @@ public class DriverService {
         currentDriver().manage().window().setSize(new Dimension(width, height));
     }
 
-    public static void clearCookies() {
-        open(BASE_URL);
-        Selenide.clearBrowserCookies();
-        Selenide.clearBrowserLocalStorage();
-    }
 
     public static void close() {
         currentDriver().quit();
