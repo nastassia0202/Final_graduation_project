@@ -7,9 +7,9 @@ import java.sql.*;
 public class DataBaseService {
     public static Logger logger = Logger.getLogger(DataBaseService.class);
 
-    private static final String DB_URL = "jdbc:postgresql://34.116.232.219:5432/postgres";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "88888888";
+    private static final String DB_URL = "jdbc:postgresql://SG-expresspay-3053-pgsql-master.servers.mongodirector.com:5432/postgres";
+    private static final String USER = "sgpostgres";
+    private static final String PASSWORD = "8.CB22H9K7tjO2it";
 
     private Connection connection = null;
     private Statement statement = null;
