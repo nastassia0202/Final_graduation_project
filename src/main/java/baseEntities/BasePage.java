@@ -9,6 +9,7 @@ public class BasePage {
     public static Logger logger = Logger.getLogger(BasePage.class);
 
     public void setUpConnectionDB() {
+        dataBaseService.closeConnection();
         org.apache.log4j.BasicConfigurator.configure();
         dataBaseService = new DataBaseService();
 
