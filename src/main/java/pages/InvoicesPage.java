@@ -15,14 +15,18 @@ public class InvoicesPage {
     private final SelenideElement successMessage = $x("//*[.='Счет успешно создан!']");
     private final SelenideElement numberInvoice = $x("//a[.='"+"database"+"']");
     private final SelenideElement totalPayment = $x("//td[.='"+"database"+",00 BYN ']");
+    private final SelenideElement cancelInvoice = $x("//div[@class='icon_grid cd-popup-trigger']");
 
 
 
-    public void checkSuccessInvoice(){
+    public void checkSuccessInvoiceAndCancel(){
         successMessage.shouldBe(Condition.visible);
         Assert.assertEquals(numberInvoice.getText(),"database");
         Assert.assertEquals(totalPayment.getText(),"database");
+        cancelInvoice.click();
     }
+
+
 
     public SelenideElement getPAGE_OPENED_IDENTIFIER() {
         return PAGE_OPENED_IDENTIFIER;
