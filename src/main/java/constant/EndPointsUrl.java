@@ -2,14 +2,11 @@ package constant;
 
 public class EndPointsUrl {
 
-    public static final String INVOICES_PAGE = "/invoices";
-    public static final String PAYMENTS_PAGE = "/payments";
-    public static final String SERVICES_PAGE = "/services";
-    public static final String PERSONAL_DATA_PAGE = "/personal";
-    public static final String ADD_INVOICE_PAGE = "/invoices/add";
-    public static final String PAYERS_PAGE = "/payers";
-    public static final String INVOICE_ACT_PAGE = "/invoice-act";
-    public static final String EMPLOYEES_PAGE = "/employees";
-    public static final String PAYERS_IMPORT_PAGE = "/payers/import";
+    public static final String CART_PAGE = "?controller=order";
+    public static final String DRESSES_PAGE = "?id_category=8&controller=category";
+    public static final String LOGIN_PAGE = "?controller=authentication&back=my-account";
+    public static final String CONTACT_PAGE = "?controller=contact";
+    public static final String ITEM_PAGE = "?id_product=5&controller=product";
+
 
 }

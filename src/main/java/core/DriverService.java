@@ -30,10 +30,10 @@ public class DriverService {
         Configuration.browser = Browsers.CHROME;
         Configuration.headless = false;
         Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = true;
         Configuration.screenshots = false;
         open("/");
+        maximize();
         
     }
 

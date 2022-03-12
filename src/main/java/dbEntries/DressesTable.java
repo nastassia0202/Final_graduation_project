@@ -5,13 +5,13 @@ import org.apache.log4j.Logger;
 
 import java.sql.ResultSet;
 
-public class InvoicesTable {
+public class DressesTable {
 
-    public static Logger logger = Logger.getLogger(InvoicesTable.class);
+    public static Logger logger = Logger.getLogger(DressesTable.class);
 
     DataBaseService dataBaseService;
 
-    public InvoicesTable(DataBaseService dataBaseService) {
+    public DressesTable(DataBaseService dataBaseService) {
         this.dataBaseService = dataBaseService;
     }
 
