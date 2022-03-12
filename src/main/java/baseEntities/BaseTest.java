@@ -3,8 +3,7 @@ package baseEntities;
 import core.DriverService;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import java.io.*;
-import static core.DriverService.*;
+
 
 public class BaseTest {
 
@@ -16,8 +15,8 @@ public class BaseTest {
     }
 
     @BeforeClass(dependsOnMethods = "setUp")
-    public void login() throws IOException, ClassNotFoundException, InterruptedException {
-        addCookie();
+    public void login() {
+
     }
 
     @AfterClass
