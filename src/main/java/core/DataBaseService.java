@@ -7,12 +7,12 @@ import java.sql.*;
 public class DataBaseService {
     public static Logger logger = Logger.getLogger(DataBaseService.class);
 
-    static final String DB_URL = "jdbc:postgresql://localhost:5432/postgres";
-    static final String USER = "postgres";
-    static final String PASSWORD = "postgres";
+    private static final String DB_URL = "jdbc:postgresql://SG-expresspay-3053-pgsql-master.servers.mongodirector.com:5432/postgres";
+    private static final String USER = "sgpostgres";
+    private static final String PASSWORD = "8.CB22H9K7tjO2it";
 
-    Connection connection = null;
-    Statement statement = null;
+    private Connection connection = null;
+    private Statement statement = null;
 
     public DataBaseService() {
         try {
@@ -74,12 +74,12 @@ public class DataBaseService {
         }
     }
 
+
     public void closeConnection() {
         try {
             connection.close();
         } catch (SQLException e) {
             logger.info(e.toString());
-            return;
         }
     }
 }
