@@ -4,7 +4,9 @@ import org.apache.log4j.Logger;
 
 import java.sql.*;
 
+
 public class DataBaseService {
+
     public static Logger logger = Logger.getLogger(DataBaseService.class);
 
     private static final String DB_URL = "jdbc:postgresql://SG-expresspay-3053-pgsql-master.servers.mongodirector.com:5432/postgres";
@@ -73,7 +75,6 @@ public class DataBaseService {
             logger.info(e.toString());
         }
     }
-
 
     public void closeConnection() {
         try {

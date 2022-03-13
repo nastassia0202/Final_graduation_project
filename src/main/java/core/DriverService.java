@@ -34,7 +34,7 @@ public class DriverService {
         Configuration.screenshots = false;
         open("/");
         maximize();
-        
+
     }
 
     public static WebDriver currentDriver() {
@@ -50,7 +50,7 @@ public class DriverService {
     }
 
     public static void executeJs(String script) {
-        JavascriptExecutor js = (JavascriptExecutor)currentDriver();
+        JavascriptExecutor js = (JavascriptExecutor) currentDriver();
         try {
             js.executeScript(script);
         } catch (Exception e) {
@@ -65,7 +65,7 @@ public class DriverService {
 
     public static void waitForUrlDoesNotContain(String urlChunk) {
         int maxTime = 20;
-        while(  currentDriver().getCurrentUrl().contains(urlChunk)  && maxTime > 0) {
+        while (currentDriver().getCurrentUrl().contains(urlChunk) && maxTime > 0) {
             wait(1);
             maxTime--;
         }
@@ -79,13 +79,11 @@ public class DriverService {
         currentDriver().manage().window().setSize(new Dimension(width, height));
     }
 
-
     public static void close() {
         currentDriver().quit();
     }
 
-    public static void wait(int seconds)
-    {
+    public static void wait(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
         } catch (InterruptedException e) {
@@ -94,13 +92,12 @@ public class DriverService {
     }
 
     public static void takeScreenshot() {
-
         File scrFile = ((TakesScreenshot) currentDriver()).getScreenshotAs(OutputType.FILE);
 
         String path = System.getProperty("user.dir")
                 + File.separator + "test-output"
                 + File.separator + "screenshots"
-                + File.separator + " " + "screenshot_" +  (new SimpleDateFormat("HHmmssSSS").format(new Date())) + ".png";
+                + File.separator + " " + "screenshot_" + (new SimpleDateFormat("HHmmssSSS").format(new Date())) + ".png";
         try {
             FileUtils.copyFile(scrFile, new File(path));
         } catch (IOException e) {
@@ -116,9 +113,7 @@ public class DriverService {
 
     // COOKIES
 
-
     public static void deleteCookie(String cookieName) {
         currentDriver().manage().deleteCookieNamed(cookieName);
     }
-
 }

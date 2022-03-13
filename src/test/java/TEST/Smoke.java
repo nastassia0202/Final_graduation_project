@@ -7,6 +7,7 @@ import pages.ContactPage;
 import pages.DressesCatalogPage;
 import pages.LoginPage;
 
+
 public class Smoke extends BaseTest {
 
     @Test

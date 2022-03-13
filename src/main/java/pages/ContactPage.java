@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.*;
 import static constant.EndPointsUrl.CONTACT_PAGE;
 
+
 public class ContactPage {
 
     private final SelenideElement subjectHeadingDropDown = $(By.id("id_contact"));
@@ -15,7 +16,6 @@ public class ContactPage {
     private final SelenideElement inputForLoadFile = $(By.name("fileUpload"));
     private final SelenideElement sendButton = $(By.id("submitMessage"));
     private final SelenideElement successAlert = $x("//p[.='Your message has been successfully sent to our team.']");
-
 
     public ContactPage() {
         open(CONTACT_PAGE);

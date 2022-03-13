@@ -14,6 +14,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static constant.EndPointsUrl.DRESSES_PAGE;
 
+
 public class DressesCatalogPage extends BasePage {
 
     private final SelenideElement casualDressesOption = $(By.id("layered_category_9"));
@@ -30,8 +31,6 @@ public class DressesCatalogPage extends BasePage {
     private final SelenideElement colorYellowOption = $(By.id("layered_id_attribute_group_16"));
     private final SelenideElement itemLink = $(By.className("product_img_link"));
     private final SelenideElement addToCardSuccessPopup = $(By.className("icon-ok"));
-
-
 
     public DressesCatalogPage() {
         open(DRESSES_PAGE);
@@ -125,9 +124,4 @@ public class DressesCatalogPage extends BasePage {
         DriverService.waitForUrlContains("color");
         itemLink.should(visible).scrollTo().click();
     }
-
-
-
-
-
 }

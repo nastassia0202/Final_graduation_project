@@ -15,7 +15,6 @@ public class UsersTable {
         this.dataBaseService = dataBaseService;
     }
 
-
     public void createTable() {
         logger.info("Создаем таблицу users");
 

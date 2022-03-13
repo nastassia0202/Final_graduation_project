@@ -2,8 +2,8 @@ package dbEntries;
 
 import core.DataBaseService;
 import org.apache.log4j.Logger;
-
 import java.sql.ResultSet;
+
 
 public class DressesTable {
 
@@ -14,7 +14,6 @@ public class DressesTable {
     public DressesTable(DataBaseService dataBaseService) {
         this.dataBaseService = dataBaseService;
     }
-
 
     public void createTable() {
         logger.info("Создаем таблицу dresses");
