@@ -1,0 +1,173 @@
+[1647209717.495][INFO]: Starting ChromeDriver 99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875}) on port 34503
+[1647209717.496][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1647209717.969][INFO]: [469613ea373bce6ff1885db2955b56bb] COMMAND InitSession {
+   "capabilities": {
+      "firstMatch": [ {
+         "acceptInsecureCerts": true,
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage" ],
+            "excludeSwitches": [ "enable-automation", "load-extension" ],
+            "extensions": [  ],
+            "prefs": {
+               "credentials_enable_service": false,
+               "download.default_directory": "F:\\TeachMe Skills\\Final_graduation_project\\build\\downloads\\1647209716331_9352_1",
+               "plugins.always_open_pdf_externally": true
+            }
+         },
+         "pageLoadStrategy": "eager"
+      } ]
+   },
+   "desiredCapabilities": {
+      "acceptInsecureCerts": true,
+      "acceptSslCerts": true,
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [ "--proxy-bypass-list=\u003C-loopback>", "--disable-dev-shm-usage" ],
+         "excludeSwitches": [ "enable-automation", "load-extension" ],
+         "extensions": [  ],
+         "prefs": {
+            "credentials_enable_service": false,
+            "download.default_directory": "F:\\TeachMe Skills\\Final_graduation_project\\build\\downloads\\1647209716331_9352_1",
+            "plugins.always_open_pdf_externally": true
+         }
+      },
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "pageLoadStrategy": "eager",
+      "takesScreenshot": true
+   }
+}
+[1647209717.975][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "credentials_enable_service": false,
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "download": {
+      "default_directory": "F:\\TeachMe Skills\\Final_graduation_project\\build\\downloads\\1647209716331_9352_1"
+   },
+   "plugins": {
+      "always_open_pdf_externally": true
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1647209717.975][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1647209717.977][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --allow-pre-commit-input --disable-background-networking --disable-backgrounding-occluded-windows --disable-client-side-phishing-detection --disable-default-apps --disable-dev-shm-usage --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-blink-features=ShadowDOMV0 --enable-logging --ignore-certificate-errors --log-level=0 --no-first-run --no-service-autorun --password-store=basic --proxy-bypass-list=<-loopback> --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\anast\AppData\Local\Temp\scoped_dir12768_391047496" data:,
+[1647209718.564][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1647209718.567][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1647209718.669][INFO]: [469613ea373bce6ff1885db2955b56bb] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": true,
+      "browserName": "chrome",
+      "browserVersion": "99.0.4844.51",
+      "chrome": {
+         "chromedriverVersion": "99.0.4844.51 (d537ec02474b5afe23684e7963d538896c63ac77-refs/branch-heads/4844@{#875})",
+         "userDataDir": "C:\\Users\\anast\\AppData\\Local\\Temp\\scoped_dir12768_391047496"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:64871"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "eager",
+      "platformName": "windows",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:extension:credBlob": true,
+      "webauthn:extension:largeBlob": true,
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "469613ea373bce6ff1885db2955b56bb"
+}
+[1647209718.776][INFO]: [469613ea373bce6ff1885db2955b56bb] COMMAND SetWindowRect {
+   "height": 768,
+   "width": 1366
+}
+[1647209718.776][INFO]: Waiting for pending navigations...
+[1647209718.778][INFO]: Done waiting for pending navigations. Status: ok
+[1647209718.901][INFO]: Waiting for pending navigations...
+[1647209718.902][INFO]: Done waiting for pending navigations. Status: ok
+[1647209718.902][INFO]: [469613ea373bce6ff1885db2955b56bb] RESPONSE SetWindowRect {
+   "height": 770,
+   "width": 1368,
+   "x": 8,
+   "y": 8
+}
+[1647209718.925][INFO]: [469613ea373bce6ff1885db2955b56bb] COMMAND Navigate {
+   "url": "http://automationpractice.com/index.php/"
+}
+[1647209718.925][INFO]: Waiting for pending navigations...
+[1647209718.926][INFO]: Done waiting for pending navigations. Status: ok
+[1647209720.526][INFO]: Waiting for pending navigations...
+[1647209720.758][INFO]: Done waiting for pending navigations. Status: disconnected: received Inspector.detached event
+[1647209720.767][INFO]: [469613ea373bce6ff1885db2955b56bb] RESPONSE Navigate
+[1647209720.772][INFO]: [469613ea373bce6ff1885db2955b56bb] COMMAND MaximizeWindow {
+
+}
+[1647209720.772][INFO]: [469613ea373bce6ff1885db2955b56bb] RESPONSE MaximizeWindow ERROR no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=99.0.4844.51)
