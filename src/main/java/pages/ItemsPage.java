@@ -11,6 +11,7 @@ public class ItemsPage {
     private final SelenideElement eveningDressesOption = $(By.id("uniform-layered_category_10"));
     private final SelenideElement SummerDresses = $(By.id("layered_category_11"));
     private final SelenideElement addToCardButton = $(By.className("Submit"));
+    private final SelenideElement addToCardSuccessPopup = $(By.className("icon-ok"));
 
 
     //   //a[contains(text(),'White')]
