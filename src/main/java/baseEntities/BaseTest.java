@@ -14,10 +14,6 @@ public class BaseTest {
         DriverService.initDriver();
     }
 
-    @BeforeClass(dependsOnMethods = "setUp")
-    public void login() {
-
-    }
 
     @AfterClass
     public void tearDown() {
