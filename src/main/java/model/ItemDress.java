@@ -7,9 +7,9 @@ import lombok.Data;
 @Builder
 public class ItemDress {
 
-    protected int id;
-    protected String type;
-    protected String size;
-    protected String color;
+    private int id;
+    private String type;
+    private String size;
+    private String color;
 
 }

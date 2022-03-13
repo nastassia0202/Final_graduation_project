@@ -17,46 +17,45 @@ public class DressesTable {
 
 
     public void createTable() {
-        logger.info("Создаем таблицу Invoices");
+        logger.info("Создаем таблицу dresses");
 
-        String createTableSQL = "CREATE TABLE invoices (" +
+        String createTableSQL = "CREATE TABLE dresses (" +
                 "id SERIAL PRIMARY KEY, " +
-                "service_option CHARACTER VARYING(30), " +
-                "account_number BIGINT, " +
-                "amount INTEGER, " +
-                "payment_purpose CHARACTER VARYING(100), " +
+                "type CHARACTER VARYING(20), " +
+                "size CHAR, " +
+                "color CHARACTER VARYING(20), " +
                 ");";
         dataBaseService.executeSQL(createTableSQL);
     }
 
     public void dropTable() {
-        logger.info("Удаляем таблицу invoices");
+        logger.info("Удаляем таблицу dresses");
 
-        String dropTableInvoicesSQL = "DROP TABLE invoices;";
+        String dropTableInvoicesSQL = "DROP TABLE dresses;";
 
         dataBaseService.executeSQL(dropTableInvoicesSQL);
     }
 
-    public ResultSet getAllInvoices() {
-        logger.info("Получаем все записи из таблицы Invoices");
+    public ResultSet getAllDresses() {
+        logger.info("Получаем все записи из таблицы dresses");
 
-        String sql = "SELECT * FROM invoices ORDER BY id ASC;";
-
-        return dataBaseService.executeQuery(sql);
-    }
-
-    public ResultSet getInvoicesByID(int id) {
-        String sql = "SELECT * FROM invoices WHERE id = " + id + ";";
+        String sql = "SELECT * FROM dresses ORDER BY id ASC;";
 
         return dataBaseService.executeQuery(sql);
     }
 
-    public void addInvoices(String service_option, int account_number,int amount, String payment_purpose ) {
-        logger.info("Добавляем запись в таблицу Invoices");
+    public ResultSet getDressByID(int id) {
+        String sql = "SELECT * FROM dresses WHERE id = " + id + ";";
 
-        String insertTableSQL = "INSERT INTO public.invoices(" +
-                "service_option, account_number,amount,payment_purpose)" +
-                "VALUES ('" + service_option + "', '"+ account_number + "', '"+ amount + "', '" + payment_purpose +");";
+        return dataBaseService.executeQuery(sql);
+    }
+
+    public void addDress(String type, char size , String color ) {
+        logger.info("Добавляем запись в таблицу dresses");
+
+        String insertTableSQL = "INSERT INTO public.dresses(" +
+                "type, size,color)" +
+                "VALUES ('" + type + "', '"+ size + "', '"+ color +");";
 
         dataBaseService.executeSQL(insertTableSQL);
     }
