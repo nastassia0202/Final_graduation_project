@@ -1,5 +1,6 @@
 package pages;
 
+import baseEntities.BasePage;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
@@ -7,10 +8,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 
-public class ItemForm {
+public class ItemForm extends BasePage {
 
     private final SelenideElement sizeOptionDropdown = $(By.id("layered_category_9"));
-    private final SelenideElement addToCardButton = $(By.className("Submit"));
+    private final SelenideElement addToCardButton = $(By.id("add_to_cart")); //*[@id="add_to_cart"]/button
     private final SelenideElement openIdent = $x("//h1[@itemprop='name']");
 
     public boolean itemFormIsOpen(){
