@@ -1,6 +1,7 @@
 package baseEntities;
 
 import com.google.gson.Gson;
+import core.ApiService;
 import core.DriverService;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -25,9 +26,7 @@ public class BaseTest {
         int userID = 1;
         Gson gson = new Gson();
         DriverService.initDriver();
-        RestAssured.baseURI = API_URL;
-        RestAssured.requestSpecification = given()
-                .header(HTTP.CONTENT_TYPE, ContentType.JSON);
+        ApiService.initApi();
         Response response = given()
                 .pathParam("id",userID)
                 .get(GET_USER);
