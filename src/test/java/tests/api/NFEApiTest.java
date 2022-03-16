@@ -14,7 +14,7 @@ import utils.Randomization;
 import static api.EndPoints.*;
 import static io.restassured.RestAssured.given;
 
-public class SuccessApiTest extends BaseApiTest {
+public class NFEApiTest extends BaseApiTest {
     Randomization randomization = new Randomization();
     int id = 19;
 
