@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class ItemForm {
+public class ItemPage {
 
     private final SelenideElement sizeOptionDropdown = $(By.id("layered_category_9"));
     private final SelenideElement addToCardButton = $(By.className("Submit"));

@@ -10,6 +10,13 @@ import pages.LoginPage;
 public class Smoke extends BaseTest {
 
     @Test
+    public void test2() throws InterruptedException {
+        LoginPage loginPage = new LoginPage();
+        loginPage.LoginWithUser(validUser);
+        Thread.sleep(20000);
+    }
+
+    @Test
     public void test() throws InterruptedException {
         LoginPage loginPage = new LoginPage();
         loginPage.LoginWithUser(loginPage.getUser());
