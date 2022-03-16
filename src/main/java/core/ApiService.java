@@ -8,8 +8,7 @@ import model.ItemDress;
 import model.User;
 import org.apache.http.protocol.HTTP;
 
-import static constant.EndPointsApi.GET_DRESS;
-import static constant.EndPointsApi.GET_USER;
+import static constant.EndPointsApi.*;
 import static constant.Urls.API_URL;
 import static io.restassured.RestAssured.given;
 
