@@ -5,32 +5,32 @@ import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
 import model.User;
 import org.apache.http.HttpStatus;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.Randomization;
 
 
 import static api.EndPoints.*;
 import static io.restassured.RestAssured.given;
 
-public class PositiveTest extends BaseApiTest {
+public class SuccessApiTest extends BaseApiTest {
+    Randomization randomization = new Randomization();
+    int id = 19;
 
-    int id = 4;
     @Test
-    public void simpleApiTest(){
+    public void getAllUsers() {
         given()
                 .when()
                 .get(GET_ALL_USERS)
                 .then()
                 .log().body()
                 .statusCode(HttpStatus.SC_OK);
-
     }
 
     @Test
-    public void addProject3(){
+    public void addUser() {
         User user = User.builder()
-                .login("FIFA")
-                .password("offal")
+                .login(randomization.randomString(5))
+                .password(randomization.randomString(5))
                 .build();
 
         given()
@@ -41,33 +41,31 @@ public class PositiveTest extends BaseApiTest {
                 .statusCode(HttpStatus.SC_CREATED);
     }
 
-    @Test
-    public void updateProject(){
-
-
+    @Test(dependsOnMethods = "addUser")
+    public void updateUserById() {
         User user = User.builder()
-                .login("FIFOsu_upd")
-                .password("tytytyyty")
+                .login(randomization.randomString(5))
+                .password(randomization.randomString(5))
                 .build();
 
-        Response response =  given()
-                .pathParam("id",id)
+        Response response = given()
+                .pathParam("id", id)
                 .body(user, ObjectMapperType.GSON)
                 .when()
-                .post(UPDATE_USER)
+                .put(UPDATE_USER)
                 .then()
                 .log().body()
                 .extract().response();
 
-        Assert.assertEquals(response.getBody().jsonPath().get("name"),user.getLogin());
+
     }
 
-    @Test
-    public void deleteProject(){
+    @Test(dependsOnMethods = "updateUserById")
+    public void deleteUserById() {
         given()
-                .pathParam("id", "3")
+                .pathParam("id", id)
                 .when()
-                .post(DELETE_USER)
+                .delete(DELETE_USER)
                 .then()
                 .log().body()
                 .statusCode(HttpStatus.SC_OK);

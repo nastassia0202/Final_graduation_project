@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 import static api.EndPoints.GET_USER;
 import static io.restassured.RestAssured.given;
 
-public class NegativeTest extends BaseApiTest {
+public class FailedApiTest extends BaseApiTest {
 
     @Test
-    public void simpleApiTest(){
-        int id = 1;
+    public void getUserByInvalidId(){
+        int id = 4;
         given()
                 .pathParam("id",id)
                 .when()
@@ -23,5 +23,16 @@ public class NegativeTest extends BaseApiTest {
 
     }
 
+    @Test
+    public void getInvalidStatusCodeByValidId(){
+        int id = 5;
+        given()
+                .pathParam("id",id)
+                .when()
+                .get(GET_USER)
+                .then()
+                .log().body()
+                .statusCode(HttpStatus.SC_BAD_REQUEST);
 
+    }
 }
