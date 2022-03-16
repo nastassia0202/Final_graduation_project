@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import model.ItemDress;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -8,24 +9,29 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class ItemPage {
 
-    private final SelenideElement sizeOptionDropdown = $(By.id("layered_category_9"));
-    private final SelenideElement addToCardButton = $(By.className("Submit"));
+    private final SelenideElement sizeOptionDropdown = $(By.id("group_1"));
+    private final SelenideElement addToCardButton = $x("//*[.='Add to cart']");
     private final SelenideElement openIdent = $x("//h1[@itemprop='name']");
+    private final SelenideElement addToCardSuccessPopup = $(By.className("icon-ok"));
 
     public boolean itemFormIsOpen(){
         return openIdent.isDisplayed();
     }
 
+    public boolean successPopupIsDisplayed(){
+        return addToCardSuccessPopup.isDisplayed();
+    }
+
     public void chooseSizeDress(String size){
         switch (size) {
             case "S":
-                sizeOptionDropdown.selectOption(1);
+                sizeOptionDropdown.scrollTo().selectOption(0);
                 break;
             case "M":
-                sizeOptionDropdown.selectOption(2);
+                sizeOptionDropdown.scrollTo().selectOption(1);
                 break;
             case "L":
-                sizeOptionDropdown.selectOption(3);
+                sizeOptionDropdown.scrollTo().selectOption(2);
                 break;
             default:
                 System.out.println("No dress size found!");
@@ -35,11 +41,13 @@ public class ItemPage {
     }
 
     public void chooseColorDress(String color){
-        $(By.name(color)).click();
+        $(By.name(color)).scrollTo().click();
     }
 
-    public void addToCart(){
-        addToCardButton.click();
+    public void addToCart(ItemDress itemDress){
+        chooseSizeDress(itemDress.getSize());
+        chooseColorDress(itemDress.getColor());
+        addToCardButton.scrollTo().click();
     }
 
 

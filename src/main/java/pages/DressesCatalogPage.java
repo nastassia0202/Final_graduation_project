@@ -28,7 +28,9 @@ public class DressesCatalogPage extends BasePage {
     private final SelenideElement colorBlackOption = $(By.id("layered_id_attribute_group_11"));
     private final SelenideElement colorBlueOption = $(By.id("layered_id_attribute_group_14"));
     private final SelenideElement colorYellowOption = $(By.id("layered_id_attribute_group_16"));
-    private final SelenideElement itemLink = $(By.className("product_img_link"));
+    private final SelenideElement itemImage = $x("//*[@itemprop='image']");
+    private final SelenideElement itemMoreButton = $x("//*[.='More']");
+    private final SelenideElement itemForm = $x("//h1[@itemprop='name']");
     private final SelenideElement addToCardSuccessPopup = $(By.className("icon-ok"));
 
 
@@ -123,9 +125,17 @@ public class DressesCatalogPage extends BasePage {
         checkDressSize(itemDress.getSize());
         checkDressColor(itemDress.getColor());
         DriverService.waitForUrlContains("color");
-        itemLink.should(visible).scrollTo().click();
+        itemImage.should(visible).scrollTo().hover();
+        itemMoreButton.should(visible).click();
     }
 
+    public void clickForItem(){
+        itemImage.scrollTo().click();
+    }
+
+    public void itemFormIsDisplayed(){
+        itemForm.isDisplayed();
+    }
 
 
 
