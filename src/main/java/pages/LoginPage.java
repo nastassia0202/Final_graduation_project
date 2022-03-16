@@ -21,6 +21,7 @@ public class LoginPage extends BasePage {
     private final SelenideElement signInButton = $(By.id("SubmitLogin"));
     private final SelenideElement alertBarDanger = $(By.className("alert-danger"));
 
+    public final SelenideElement userName = $(By.className("account"));
 
     public LoginPage() {
         open(LOGIN_PAGE);
@@ -36,6 +37,25 @@ public class LoginPage extends BasePage {
                 return User.builder()
                         .login(resultSet.getString("login"))
                         .password(resultSet.getString("password"))
+                        .build();
+
+            }
+        } catch (SQLException e) {
+            logger.error(e.toString());
+        }
+        closeConnectionDB();
+        return null;
+    }
+
+    public User getUserName() {
+        setUpConnectionDB();
+        UsersTable usersTable = new UsersTable(dataBaseService);
+        ResultSet resultSet = usersTable.getUserByID(1);
+
+        try {
+            while (resultSet.next()) {
+                return User.builder()
+                        .login(resultSet.getString("login"))
                         .build();
 
             }
