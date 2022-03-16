@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 public class FailedApiTest extends BaseApiTest {
 
     @Test
-    public void getUserByInvalidId(){
+    public void getValidStatusCodeByInvalidId(){
         int id = 4;
         given()
                 .pathParam("id",id)

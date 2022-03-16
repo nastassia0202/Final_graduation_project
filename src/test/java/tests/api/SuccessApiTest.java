@@ -59,15 +59,4 @@ public class SuccessApiTest extends BaseApiTest {
 
 
     }
-
-    @Test(dependsOnMethods = "updateUserById")
-    public void deleteUserById() {
-        given()
-                .pathParam("id", id)
-                .when()
-                .delete(DELETE_USER)
-                .then()
-                .log().body()
-                .statusCode(HttpStatus.SC_OK);
-    }
 }
