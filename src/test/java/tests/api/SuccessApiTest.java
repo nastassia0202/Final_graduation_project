@@ -1,10 +1,12 @@
 package tests.api;
 
 import api.BaseApiTest;
+import com.google.gson.Gson;
 import io.restassured.mapper.ObjectMapperType;
 import io.restassured.response.Response;
 import model.User;
 import org.apache.http.HttpStatus;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Randomization;
 
@@ -57,6 +59,25 @@ public class SuccessApiTest extends BaseApiTest {
                 .log().body()
                 .extract().response();
 
+
+    }
+
+    @Test
+    public void getUserById() {
+        int userID = 1;
+        Gson gson = new Gson();
+
+        User expectedUser = User.builder()
+                .id(1)
+                .login("lisovskij.sanya@mail.ru")
+                .password("3626831Cfyz@")
+                .build();
+
+        Response response = given()
+                .pathParam("id",userID)
+                .get(GET_USER);
+        User actualUser = gson.fromJson(response.getBody().asString(), User.class);
+        Assert.assertEquals(actualUser, expectedUser);
 
     }
 }
