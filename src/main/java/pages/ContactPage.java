@@ -25,7 +25,7 @@ public class ContactPage {
         subjectHeadingDropDown.selectOption(1);
         orderReferenceDropDown.selectOption(1);
         productDropDown.scrollTo().selectOption(1);
-        inputForLoadFile.setValue("D:/ot_gvozd_do_sandala.pdf");
+        inputForLoadFile.setValue("F:\\TeachMe Skills\\Automation testing\\Final_graduation_project\\src\\test\\resources\\file");
         messageField.sendKeys("My message");
         sendButton.scrollTo().click();
     }

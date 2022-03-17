@@ -21,8 +21,6 @@ public class LoginPage extends BasePage {
     private final SelenideElement signInButton = $(By.id("SubmitLogin"));
     private final SelenideElement alertBarDanger = $(By.className("alert-danger"));
 
-    public final SelenideElement userName = $(By.className("account"));
-
     public LoginPage() {
         open(LOGIN_PAGE);
     }

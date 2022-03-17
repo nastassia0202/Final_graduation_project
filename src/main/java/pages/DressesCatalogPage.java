@@ -30,7 +30,6 @@ public class DressesCatalogPage extends BasePage {
     private final SelenideElement colorBlueOption = $(By.id("layered_id_attribute_group_14"));
     private final SelenideElement colorYellowOption = $(By.id("layered_id_attribute_group_16"));
     private final SelenideElement itemLink = $(By.className("product_img_link"));
-    public final SelenideElement addToCardSuccessPopup = $(By.className("icon-ok"));
 
     public DressesCatalogPage() {
         open(DRESSES_PAGE);

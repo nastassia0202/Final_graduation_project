@@ -7,4 +7,5 @@ public class EndPointsUrl {
     public static final String LOGIN_PAGE = "?controller=authentication&back=my-account";
     public static final String CONTACT_PAGE = "?controller=contact";
     public static final String ITEM_PAGE = "?id_product=5&controller=product";
+    public static final String ADD_PRODUCT_PAGE = "?id_product=5&controller=product";
 }
