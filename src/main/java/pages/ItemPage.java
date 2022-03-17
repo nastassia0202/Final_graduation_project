@@ -7,20 +7,17 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class ItemPage {
+public class ItemPage extends HomeBar {
 
     private final SelenideElement sizeOptionDropdown = $(By.id("group_1"));
-    private final SelenideElement addToCardButton = $x("//*[.='Add to cart']");
+    private final SelenideElement addToCartButton = $x("//*[.='Add to cart']");
     private final SelenideElement openIdent = $x("//h1[@itemprop='name']");
-    private final SelenideElement addToCardSuccessPopup = $(By.className("icon-ok"));
 
     public boolean itemFormIsOpen(){
         return openIdent.isDisplayed();
     }
 
-    public boolean successPopupIsDisplayed(){
-        return addToCardSuccessPopup.isDisplayed();
-    }
+
 
     public void chooseSizeDress(String size){
         switch (size) {
@@ -47,7 +44,11 @@ public class ItemPage {
     public void addToCart(ItemDress itemDress){
         chooseSizeDress(itemDress.getSize());
         chooseColorDress(itemDress.getColor());
-        addToCardButton.scrollTo().click();
+        clickToAddButton();
+    }
+
+    public void clickToAddButton(){
+        addToCartButton.scrollTo().click();
     }
 
 

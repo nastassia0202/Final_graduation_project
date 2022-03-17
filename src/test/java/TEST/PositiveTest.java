@@ -5,7 +5,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 
-public class Smoke extends BaseTest {
+import static constant.EndPointsUrl.ITEM_PAGE;
+import static com.codeborne.selenide.Selenide.open;
+
+public class PositiveTest extends BaseTest {
 
     @Test
     public void loginTest() throws InterruptedException {
@@ -48,12 +51,33 @@ public class Smoke extends BaseTest {
     }
 
     @Test
-    public void popUpTest() throws InterruptedException {
+    public void dialogBoxTest() throws InterruptedException {
         LoginPage loginPage = new LoginPage();
         loginPage.LoginWithUser(validUser);
         DressesCatalogPage dressesCatalogPage = new DressesCatalogPage();
         dressesCatalogPage.clickForItem();
         dressesCatalogPage.itemFormIsDisplayed();
+        Thread.sleep(20000);
+    }
+
+    @Test
+    public void popUpTest() throws InterruptedException {
+        LoginPage loginPage = new LoginPage();
+        loginPage.LoginWithUser(validUser);
+        open(ITEM_PAGE);
+        ItemPage itemPage = new ItemPage();
+        itemPage.clickToAddButton();
+        itemPage.successPopupIsDisplayed();
+        Thread.sleep(20000);
+    }
+
+    @Test(dataProvider = "data-provider", dataProviderClass = BaseTest.class)
+    public void limitValueTest(String string) throws InterruptedException {
+        LoginPage loginPage = new LoginPage();
+        loginPage.LoginWithUser(validUser);
+        HomeBar homeBar = new HomeBar();
+        homeBar.searchItem(string);
+
         Thread.sleep(20000);
     }
 

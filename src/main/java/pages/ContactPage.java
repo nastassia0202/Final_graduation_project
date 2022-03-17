@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.*;
 import static constant.EndPointsUrl.CONTACT_PAGE;
 
-public class ContactPage {
+public class ContactPage extends HomeBar {
 
     private final SelenideElement subjectHeadingDropDown = $(By.id("id_contact"));
     private final SelenideElement orderReferenceDropDown = $(By.name("id_order"));

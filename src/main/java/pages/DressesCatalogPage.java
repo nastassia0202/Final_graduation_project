@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static constant.EndPointsUrl.DRESSES_PAGE;
 
-public class DressesCatalogPage extends BasePage {
+public class DressesCatalogPage extends HomeBar {
 
     private final SelenideElement casualDressesOption = $(By.id("layered_category_9"));
     private final SelenideElement eveningDressesOption = $(By.id("uniform-layered_category_10"));

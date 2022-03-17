@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static constant.EndPointsUrl.LOGIN_PAGE;
 
-public class LoginPage extends BasePage {
+public class LoginPage extends HomeBar {
 	private final SelenideElement emailField = $(By.id("email"));
 	private final SelenideElement passwordField = $(By.id("passwd"));
 	private final SelenideElement signInButton = $(By.id("SubmitLogin"));
