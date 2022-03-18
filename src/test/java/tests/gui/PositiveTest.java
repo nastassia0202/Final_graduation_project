@@ -39,7 +39,6 @@ public class PositiveTest extends BaseTest {
         ContactPage contactPage = new ContactPage();
         contactPage.sendMail();
         contactPage.successAlertIsVisible();
-        Assert.assertTrue(contactPage.successAlertIsVisible());
     }
 
     @Test

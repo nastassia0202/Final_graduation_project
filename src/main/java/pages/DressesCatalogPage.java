@@ -133,8 +133,8 @@ public class DressesCatalogPage extends HomeBar {
         itemImage.scrollTo().click();
     }
 
-    public void itemFormIsDisplayed(){
-        itemForm.isDisplayed();
+    public boolean itemFormIsDisplayed(){
+        return itemForm.isDisplayed();
     }
 
 

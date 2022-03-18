@@ -24,7 +24,10 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp(){
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+                        .screenshots(true)
+                        .savePageSource(false));
+
         DriverService.initDriver();
         ApiService.initApi();
         validUser = ApiService.getValidUser();
