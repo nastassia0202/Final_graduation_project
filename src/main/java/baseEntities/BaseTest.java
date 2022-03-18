@@ -1,8 +1,11 @@
 package baseEntities;
 
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import com.codeborne.selenide.testng.SoftAsserts;
 import core.ApiService;
 import core.DriverService;
+import io.qameta.allure.selenide.AllureSelenide;
 import model.ItemDress;
 import model.User;
 import org.testng.annotations.*;
@@ -11,7 +14,7 @@ import utils.Randomization;
 
 import java.lang.reflect.Method;
 
-
+@Listeners({SoftAsserts.class})
 public class BaseTest {
 
     public User validUser;
@@ -21,6 +24,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp(){
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DriverService.initDriver();
         ApiService.initApi();
         validUser = ApiService.getValidUser();

@@ -1,11 +1,14 @@
 package tests.gui;
 
 import baseEntities.BaseTest;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 
 public class PositiveTest extends BaseTest {
+    private static final Logger logger = LogManager.getLogger(PositiveTest.class);
 
 
     @Test
@@ -25,6 +28,7 @@ public class PositiveTest extends BaseTest {
         ItemPage itemPage = new ItemPage();
         Assert.assertTrue(itemPage.itemPageIsOpen());
         itemPage.addToCart(validDress);
+        itemPage.successPopupIsDisplayed();
         CartPage cartPage = new CartPage();
         cartPage.deleteItem();
         cartPage.alertIsDisplayed();
@@ -34,6 +38,7 @@ public class PositiveTest extends BaseTest {
     public void uploadFileTest(){
         ContactPage contactPage = new ContactPage();
         contactPage.sendMail();
+        contactPage.successAlertIsVisible();
         Assert.assertTrue(contactPage.successAlertIsVisible());
     }
 

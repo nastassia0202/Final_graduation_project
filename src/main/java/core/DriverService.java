@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 
+import static com.codeborne.selenide.AssertionMode.SOFT;
 import static constant.Urls.BASE_URL;
 
 public class DriverService {
@@ -28,12 +29,10 @@ public class DriverService {
         org.apache.log4j.BasicConfigurator.configure();
         Configuration.baseUrl = BASE_URL;
         Configuration.browser = Browsers.CHROME;
+        Configuration.startMaximized = true;
         Configuration.headless = false;
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
-        Configuration.screenshots = false;
+        Configuration.assertionMode = SOFT;
         open("/");
-        maximize();
         
     }
 

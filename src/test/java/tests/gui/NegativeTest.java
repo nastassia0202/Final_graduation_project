@@ -1,6 +1,8 @@
 package tests.gui;
 
 import baseEntities.BaseTest;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DressesCatalogPage;
@@ -9,6 +11,7 @@ import pages.ItemPage;
 import pages.LoginPage;
 
 public class NegativeTest extends BaseTest {
+    private static final Logger logger = LogManager.getLogger(NegativeTest.class);
 
     @Test(dataProvider = "data-provider", dataProviderClass = BaseTest.class)
     public void dataOverageTest(String searchString,int expectedDataSize){
