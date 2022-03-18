@@ -8,10 +8,9 @@ import static constant.EndPointsApi.*;
 import static io.restassured.RestAssured.given;
 
 public class AFEApiTest extends BaseApiTest {
-
+    int id = 4;
     @Test
     public void getUserByInvalidId(){
-        int id = 4;
         given()
                 .pathParam("id",id)
                 .when()
@@ -24,7 +23,6 @@ public class AFEApiTest extends BaseApiTest {
 
     @Test
     public void getDressByInvalidId(){
-        int id = 4;
         given()
                 .pathParam("id",id)
                 .when()
