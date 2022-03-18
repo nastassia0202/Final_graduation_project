@@ -1,4 +1,4 @@
-package TEST;
+package tests.gui;
 
 import baseEntities.BaseTest;
 import org.testng.Assert;
@@ -13,7 +13,7 @@ public class PositiveTest extends BaseTest {
         DressesCatalogPage dressesCatalogPage = new DressesCatalogPage();
         dressesCatalogPage.addDressToCard(validDress);
         ItemPage itemPage = new ItemPage();
-        Assert.assertTrue(itemPage.itemFormIsOpen());
+        Assert.assertTrue(itemPage.itemPageIsOpen());
         itemPage.addToCart(validDress);
         itemPage.successPopupIsDisplayed();
     }
@@ -23,7 +23,7 @@ public class PositiveTest extends BaseTest {
         DressesCatalogPage dressesCatalogPage = new DressesCatalogPage();
         dressesCatalogPage.addDressToCard(validDress);
         ItemPage itemPage = new ItemPage();
-        Assert.assertTrue(itemPage.itemFormIsOpen());
+        Assert.assertTrue(itemPage.itemPageIsOpen());
         itemPage.addToCart(validDress);
         CartPage cartPage = new CartPage();
         cartPage.deleteItem();
@@ -58,7 +58,6 @@ public class PositiveTest extends BaseTest {
         homeBar.searchItem(searchString);
         actualDataSize = homeBar.getValueBySearchField();
         Assert.assertEquals(actualDataSize.length(),expectedDataSize);
-
 
     }
 

@@ -1,9 +1,11 @@
-package TEST;
+package tests.gui;
 
 import baseEntities.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.DressesCatalogPage;
 import pages.HomeBar;
+import pages.ItemPage;
 import pages.LoginPage;
 
 public class NegativeTest extends BaseTest {
@@ -27,5 +29,11 @@ public class NegativeTest extends BaseTest {
         Assert.assertTrue(homeBar.accountLinkIsDisplayed());
     }
 
-
+    @Test
+    public void entityAdditionBugTest(){
+        DressesCatalogPage dressesCatalogPage = new DressesCatalogPage();
+        dressesCatalogPage.addDressToCard(validDress);
+        ItemPage itemPage = new ItemPage();
+        Assert.assertEquals(itemPage.getValueBySizeOption(),validDress.getSize());
+    }
 }

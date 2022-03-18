@@ -20,8 +20,12 @@ public class ItemPage extends HomeBar {
     public ItemPage() {
     }
 
-    public boolean itemFormIsOpen(){
+    public boolean itemPageIsOpen(){
         return openIdent.isDisplayed();
+    }
+
+    public String getValueBySizeOption(){
+        return sizeOptionDropdown.getText();
     }
 
     public void chooseSizeDress(String size){
@@ -46,15 +50,17 @@ public class ItemPage extends HomeBar {
         $(By.name(color)).scrollTo().click();
     }
 
+    public void clickToAddButton(){
+        addToCartButton.scrollTo().click();
+    }
+
     public void addToCart(ItemDress itemDress){
         chooseSizeDress(itemDress.getSize());
         chooseColorDress(itemDress.getColor());
         clickToAddButton();
     }
 
-    public void clickToAddButton(){
-        addToCartButton.scrollTo().click();
-    }
+
 
 
 
