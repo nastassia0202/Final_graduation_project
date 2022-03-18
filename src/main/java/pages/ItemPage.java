@@ -4,8 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import model.ItemDress;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
+import static constant.EndPointsUrl.ITEM_PAGE;
 
 public class ItemPage extends HomeBar {
 
@@ -13,11 +13,16 @@ public class ItemPage extends HomeBar {
     private final SelenideElement addToCartButton = $x("//*[.='Add to cart']");
     private final SelenideElement openIdent = $x("//h1[@itemprop='name']");
 
+    public ItemPage(String optionWithUrl) {
+        open(ITEM_PAGE);
+    }
+
+    public ItemPage() {
+    }
+
     public boolean itemFormIsOpen(){
         return openIdent.isDisplayed();
     }
-
-
 
     public void chooseSizeDress(String size){
         switch (size) {
